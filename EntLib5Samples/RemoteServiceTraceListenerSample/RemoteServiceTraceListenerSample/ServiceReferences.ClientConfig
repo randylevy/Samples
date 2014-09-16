@@ -1,0 +1,17 @@
+﻿<configuration>
+  <system.serviceModel>
+    <bindings>
+      <customBinding>
+        <binding name="CustomBinding_ILoggingService">
+          <binaryMessageEncoding />
+          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:51625/LogService.svc"
+          binding="customBinding" bindingConfiguration="CustomBinding_ILoggingService"
+          contract="Microsoft.Practices.EnterpriseLibrary.Logging.Service.ILoggingService" name="CustomBinding_ILoggingService" />
+    </client>
+  </system.serviceModel>
+</configuration>
